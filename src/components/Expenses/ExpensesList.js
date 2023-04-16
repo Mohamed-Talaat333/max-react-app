@@ -7,14 +7,9 @@ const ExpensesList = (props) => {
     return <h2 className="espenses-list__fallback">Found No Expenses.</h2>;
   }
 
-  return props.items.map((item) => (
-    <ul className="expenses-list">
-      <ExpenseItem
-        key={item.id}
-        title={item.title}
-        amount={item.amount}
-        date={item.date}
-      />
+  return props.items.map((item, index) => (
+    <ul key={item.id} className="expenses-list">
+      <ExpenseItem title={item.title} amount={item.amount} date={item.date} />
     </ul>
   ));
 };
